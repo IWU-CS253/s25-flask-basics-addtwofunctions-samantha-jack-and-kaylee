@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Two Column Layout{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="left-column">
+        <!-- Navigation Menu -->
+        <h2>Navigation</h2>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('calc') }}">MicroCalc</a></li>
+                <li><a href="{{ url_for('wordstatsindex') }}">WordStats</a></li>
+{#                <li><a href="{{ url_for('contact') }}">Contact</a></li>#}
+
+            </ul>
+        </nav>
+    </div>
+    <div class="right-column">
+        {% block content %}
+        <!-- Content unique to each page -->
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

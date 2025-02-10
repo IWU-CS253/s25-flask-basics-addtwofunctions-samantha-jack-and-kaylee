@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Word Stats</h2>
+    <form action="/wordstats" method="post">
+        <label for="user_string">Enter your string:</label>
+        <input type="text" id="user_string" name="user_string" required>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if average_length is not none %}
+        <p>Average word length: {{ average_length }}</p>
+    {% endif %}
+{% endblock %}

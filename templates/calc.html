@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="/calc" method="post">
+    <input type="hidden" name="current_value" value="{{ current_value }}">
+
+    Display:<p>
+        {%  if current_value is not none %}
+            {{ current_value }}
+        {%  endif %}</p>
+    <p>
+    <button name="num" type="submit" value="1">1</button>
+    <button name="num" type="submit" value="2">2</button>
+    <button name="num" type="submit" value="3">3</button>
+    <button name="num" type="submit" value="+">+</button>
+    </p>
+    <p>
+    <button name="num" type="submit" value="4">4</button>
+    <button name="num" type="submit" value="5">5</button>
+    <button name="num" type="submit" value="6">6</button>
+    <button name="num" type="submit" value="-">-</button>
+    </p>
+    <p>
+    <button name="num" type="submit" value="7">7</button>
+    <button name="num" type="submit" value="8">8</button>
+    <button name="num" type="submit" value="9">9</button>
+    <button name="num" type="submit" value="*">*</button>
+    </p>
+
+    <p>
+    <button name="clear" type="submit" value="clear">C</button>
+    <button name="num" type="submit" value="0">0</button>
+    <button name="num" type="submit" value="=">=</button>
+    <button name="num" type="submit" value="/">/</button>
+    </p>
+
+</form>
+
+
+{% endblock %}
+
+
+{##}
+{#    <input autocomplete="off" autofocus name="number1" placeholder="Number1" type="number">#}
+{#    <input autocomplete="off" name="number2" placeholder="Number2" type="number">#}
