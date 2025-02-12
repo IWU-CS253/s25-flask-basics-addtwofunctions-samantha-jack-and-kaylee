@@ -13,6 +13,7 @@
     {% if average_length is not none %}
         <p>Your string: {{ user_string }}</p>
         <p>Average word length: {{ average_length }}</p>
-        <p>The character {{ user_char }} appeared {{ char_count }} times</p>
+        <p>Character count: {{ char_count }}</p>
+        <p>The character {{ user_char }} appeared {{ special_count }} times</p>
     {% endif %}
 {% endblock %}
