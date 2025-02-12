@@ -16,4 +16,10 @@
         <p>Character count: {{ char_count }}</p>
         <p>The character {{ user_char }} appeared {{ special_count }} times</p>
     {% endif %}
+    {% if word_count is not none %}
+        <p>Word count: {{ word_count }}</p>
+    {% endif %}
+    {% if char_count is not none %}
+        <p>Character count: {{ char_count }}</p>
+    {% endif %}
 {% endblock %}

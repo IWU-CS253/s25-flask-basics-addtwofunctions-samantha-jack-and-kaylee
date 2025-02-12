@@ -1,4 +1,5 @@
 # calc.py
+import math
 
 def calculate(current_value, num, clear):
     if clear:
@@ -11,6 +12,10 @@ def calculate(current_value, num, clear):
                 return str(eval(current_value))
             except:
                 return 'Error'
+        elif num == "^2":
+            current_value = int(current_value) * int(current_value)
+        elif num == "√":
+            current_value = math.sqrt(float(current_value))
         else:
             # Append the pressed button value to the current value
             return current_value + num
