@@ -5,10 +5,14 @@
     <form action="/wordstats" method="post">
         <label for="user_string">Enter your string:</label>
         <input type="text" id="user_string" name="user_string" required>
+        <label for="user_char">Check frequency of character:</label>
+        <input type="text" name="user_char" placeholder="Enter any character..." required>
         <input type="submit" value="Calculate">
     </form>
 
     {% if average_length is not none %}
+        <p>Your string: {{ user_string }}</p>
         <p>Average word length: {{ average_length }}</p>
+        <p>The character {{ user_char }} appeared {{ char_count }} times</p>
     {% endif %}
 {% endblock %}
