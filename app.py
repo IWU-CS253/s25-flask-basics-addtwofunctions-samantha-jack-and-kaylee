@@ -28,8 +28,12 @@ def wordstatsindex():
         average_length = wordstats.average_length(user_string)
         word_count = wordstats.count_words(user_string)
         char_count = wordstats.count_char(user_string)
-        return render_template('wordstats.html', average_length=average_length, word_count=word_count,
-                               char_count=char_count)
+        user_char = request.form["user_char"]
+        special_count = 0
+        for char in user_string:
+            if char == user_char:
+                special_count+=1
+        return render_template('wordstats.html',user_string=user_string, average_length=average_length, user_char=user_char, char_count=char_count, special_count = special_count)
     else:
         return render_template('wordstats.html', average_length=None, word_count=None,
                                char_count=None)
